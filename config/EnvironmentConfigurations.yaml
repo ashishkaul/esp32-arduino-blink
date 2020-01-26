@@ -1,0 +1,24 @@
+configurations:
+  execution:
+    skip-build: false
+    skip-static-analysis: false
+    skip-unit-test: true
+    skip-package: true
+    skip-artifact-storage: true
+    skip-on-device-test: false
+    skip-deploy-artifact: false
+  
+stages:
+  build:
+    tool: 'platform-io'
+    goals: 'pio remote run'
+    environment: ''
+  static-analysis:
+    tool: 'platform-io'
+    goals: 'pio check'
+  on-device-test:
+    tool: 'platform-io'
+    goals: 'pio remote test'
+  deploy:
+    tool: 'platform-io'
+    goals: 'pio remote run --target upload'
