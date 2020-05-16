@@ -31,7 +31,7 @@ install:
   - "platformio update"
 language: python
 python: 
-  - "2.7"
+  - "3.5"
 script: 
   - "platformio run"
   - "pio check"
